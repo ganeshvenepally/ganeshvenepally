@@ -31,6 +31,7 @@ theme:
         name: Switch to system preference
   features:
     # - navigation.sections
+    - content.code.copy
     - navigation.tracking
     - navigation.indexes
     - navigation.expand
@@ -61,8 +62,12 @@ nav:
     - Intro: network-automation/index.md
     - NetDevOps: network-automation/01-netdevops/index.md
     - Data Models and Encodings: network-automation/02-data-models-encodings/index.md
-    - Technologies:
-      - Virtual Environment: network-automation/03-python/01-virtual-environmet/index.md
+    - Python:
+      - network-automation/03-python/index.md
+      - Virtual Environment: network-automation/03-python/01-virtual-environmet.md
+      - Paramiko: network-automation/03-python/02-paramiko.md
+      - Netmiko: network-automation/03-python/03-netmiko.md
+      #- Nornir: network-automation/03-python/02-nornir/index.md
   # - About: 'about.md'
 
 extra:
