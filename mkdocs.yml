@@ -67,7 +67,7 @@ nav:
       - Virtual Environment: network-automation/03-python/01-virtual-environmet.md
       - Paramiko: network-automation/03-python/02-paramiko.md
       - Netmiko: network-automation/03-python/03-netmiko.md
-      #- Nornir: network-automation/03-python/02-nornir/index.md
+      - Nornir: network-automation/03-python/04-nornir.md
   # - About: 'about.md'
 
 extra:
