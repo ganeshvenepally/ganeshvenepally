@@ -58,9 +58,9 @@ markdown_extensions:
 nav:
   - Home: 'index.md'
   - Network Automation:
-    - Intro: network-automation\index.md
-    - NetDevOps: network-automation\01-netdevops\index.md
-    - Data Models and Encodings: network-automation\02-data-models-encodings\index.md
+    - Intro: network-automation/index.md
+    - NetDevOps: network-automation/01-netdevops/index.md
+    - Data Models and Encodings: network-automation/02-data-models-encodings/index.md
   - About: 'about.md'
 
 extra:
