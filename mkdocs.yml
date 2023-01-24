@@ -1,4 +1,9 @@
 site_name: Ganesh Venepally
+
+site_author: Ganesh Venepally
+site_description: >-
+  DESCRIPTION
+
 theme:
   name: material
   # custom_dir: overrides
@@ -55,6 +60,12 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.details
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.mark
+
 
 nav:
   - Home: 'index.md'
@@ -78,3 +89,7 @@ extra:
       link: https://github.com/ganeshvenepally/ganeshvenepally
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/ganesh-venepally/
+
+
+copyright: |
+  &copy; 2023 <a>Ganesh Venepally</a>
