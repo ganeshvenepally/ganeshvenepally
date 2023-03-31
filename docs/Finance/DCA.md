@@ -1,3 +1,6 @@
+# Python Script to Backtest DCA
+
+```
 import os
 import pandas as pd
 import yfinance as yf
@@ -91,3 +94,4 @@ print(f"Final portfolio value: ${final_results['final_portfolio_value']:.2f}")
 print(f"ROI: {final_results['ROI'] * 100:.2f}%")
 print(f"Max Drawdown: {final_results['max_drawdown'] * 100:.2f}%")
 
+```
