@@ -1,1 +1,1 @@
-# Section to Track my Fincacne related Scripts
+# Section to Track my Finance related Scripts
