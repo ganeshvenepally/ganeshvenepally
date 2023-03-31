@@ -80,7 +80,7 @@ nav:
       - Netmiko: network-automation/03-python/03-netmiko.md
       - Nornir: network-automation/03-python/04-nornir.md
   - Finance:
-    - Intro: Finance/DCA.md
+    - Intro: Finance/DCA/index.md
   # - About: 'about.md'
 
 extra:
