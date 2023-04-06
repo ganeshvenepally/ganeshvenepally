@@ -10,17 +10,19 @@ def get_trading_dates(start_date, end_date):
     trading_dates = pd.bdate_range(start_date, end_date, freq='W')
     return trading_dates
 
-def record_data(date, ETF_price, shares_purchased, total_investment, total_shares, final_results=False):
+def record_data(date, ETF_price, shares_purchased, total_investment, total_shares, weekly_investment, ROI=None, final_results=False):
     return {
         'date': date,
         'ETF_price': ETF_price,
         'shares_purchased': shares_purchased,
         'total_investment': total_investment,
         'total_shares': total_shares,
+        'weekly_investment': weekly_investment,
+        'ROI': ROI,
         'final_results': final_results
     }
 
-def calculate_final_results(data_records):
+def calculate_final_results(data_records, weekly_investment):
     last_record = data_records[-1]
     total_investment = last_record['total_investment']
     total_shares = last_record['total_shares']
@@ -43,12 +45,13 @@ def calculate_final_results(data_records):
         'final_portfolio_value': final_portfolio_value,
         'ROI': ROI,
         'max_drawdown': max_drawdown,
+        'weekly_investment': weekly_investment
     }
 
 def DCA(ETF_ticker, start_date, end_date, weekly_investment):
     trading_dates = get_trading_dates(start_date, end_date)
     ETF_data = yf.download(ETF_ticker, start=start_date, end=end_date, progress=False)
-    
+
     data_records = []
 
     for date in trading_dates:
@@ -56,23 +59,24 @@ def DCA(ETF_ticker, start_date, end_date, weekly_investment):
             date = date + timedelta(days=1)
             while date not in ETF_data.index:
                 date = date + timedelta(days=1)
-        
+
         ETF_price = ETF_data.loc[date, 'Close']
         shares_purchased = weekly_investment / ETF_price
         total_investment = (len(data_records) + 1) * weekly_investment
         total_shares = sum([record['shares_purchased'] for record in data_records]) + shares_purchased
-        
-        data_records.append(record_data(date, ETF_price, shares_purchased, total_investment, total_shares))
 
-    final_results = calculate_final_results(data_records)
-    data_records.append(record_data(None, None, None, final_results['total_investment'], final_results['total_shares'], final_results=True))
+        ROI = (total_shares * ETF_price - total_investment) / total_investment
+        data_records.append(record_data(date, ETF_price, shares_purchased, total_investment, total_shares, weekly_investment, ROI))
+
+    final_results = calculate_final_results(data_records, weekly_investment)
+    data_records.append(record_data(None, None, None, final_results['total_investment'], final_results['total_shares'], weekly_investment, final_results['ROI'], final_results=True))
 
     return data_records, final_results
 
-ETF_ticker = 'QQQ'
-start_date = '2022-01-01'
-end_date = '2023-3-31'
-weekly_investment = 500
+ETF_ticker = 'TQQQ'
+start_date = '2011-01-23'
+end_date = '2023-4-04'
+weekly_investment = 100
 
 data, final_results = DCA(ETF_ticker, start_date, end_date, weekly_investment)
 
@@ -93,5 +97,6 @@ print(f"Total shares: {final_results['total_shares']:.2f}")
 print(f"Final portfolio value: ${final_results['final_portfolio_value']:.2f}")
 print(f"ROI: {final_results['ROI'] * 100:.2f}%")
 print(f"Max Drawdown: {final_results['max_drawdown'] * 100:.2f}%")
+
 
 ```
