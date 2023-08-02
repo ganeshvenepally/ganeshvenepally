@@ -79,6 +79,21 @@ nav:
       - Paramiko: network-automation/03-python/02-paramiko.md
       - Netmiko: network-automation/03-python/03-netmiko.md
       - Nornir: network-automation/03-python/04-nornir.md
+    - Data Models and Encodings: network-automation/04-data-models-encodings/index.md
+    - Technologies:
+      - network-automation/05-technologies/index.md
+      - network-automation/05-technologies/01-python.md
+      - network-automation/05-technologies/02-interacting.md
+      - network-automation/05-technologies/03-git.md
+      - network-automation/05-technologies/04-docker.md
+    - Automation Tools:
+      - network-automation/06-automation-tools/index.md
+      - network-automation/06-automation-tools/01-connection.md
+      - network-automation/06-automation-tools/02-parsing.md
+      - network-automation/06-automation-tools/03-configuring.md
+      - network-automation/06-automation-tools/04-summary.md
+    - Text Editors: network-automation/07-text-editors/index.md
+
   - Finance:
     - Intro: Finance/index.md
     - DCA: Finance/DCA/index.md
