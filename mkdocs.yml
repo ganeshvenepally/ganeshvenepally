@@ -3,11 +3,7 @@ site_name: Ganesh Venepally
 site_author: Ganesh Venepally
 site_description: >-
   DESCRIPTION
-  
-plugins:
-    - search
-    - pdf-export
-    
+      
 theme:
   name: material
   # custom_dir: overrides
