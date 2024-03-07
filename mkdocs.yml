@@ -3,37 +3,57 @@ site_name: Ganesh Venepally
 site_author: Ganesh Venepally
 site_description: >-
   DESCRIPTION
-      
+
 theme:
   name: material
-  # custom_dir: overrides
-  # icon:
-  #   logo: fontawesome/solid/laptop-code
-  favicon: ./favicon.ico
+  custom_dir: docs/_theme/
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - content.code.copy
+    - navigation.footer
   palette:
-    # Palette toggle for automatic mode
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/brightness-auto
-        name: Switch to light mode
-
-    # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: blue grey
-      accent: teal
       toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-
-    # Palette toggle for dark mode
+        icon: material/lightbulb-outline
+        name: Switch to Dark Mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: blue grey
-      accent: teal
       toggle:
-        icon: material/brightness-4
-        name: Switch to system preference
+        icon: material/lightbulb
+        name: Switch to Light Mode
+        
+# theme:
+#   name: material
+#   # custom_dir: overrides
+#   # icon:
+#   #   logo: fontawesome/solid/laptop-code
+#   favicon: ./favicon.ico
+#   palette:
+#     # Palette toggle for automatic mode
+#     - media: "(prefers-color-scheme)"
+#       toggle:
+#         icon: material/brightness-auto
+#         name: Switch to light mode
+
+#     # Palette toggle for light mode
+#     - media: "(prefers-color-scheme: light)"
+#       scheme: default
+#       primary: blue grey
+#       accent: teal
+#       toggle:
+#         icon: material/brightness-7
+#         name: Switch to dark mode
+
+#     # Palette toggle for dark mode
+#     - media: "(prefers-color-scheme: dark)"
+#       scheme: slate
+#       primary: blue grey
+#       accent: teal
+#       toggle:
+#         icon: material/brightness-4
+#         name: Switch to system preference
   features:
     # - navigation.sections
     - content.code.copy
