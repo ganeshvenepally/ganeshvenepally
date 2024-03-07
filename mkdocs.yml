@@ -11,7 +11,7 @@ theme:
   #   logo: fontawesome/solid/laptop-code
   favicon: ./favicon.ico
   palette:
-      - media: "(prefers-color-scheme: light)"
+    - media: "(prefers-color-scheme: light)"
       scheme: default
       toggle:
         icon: material/lightbulb-outline
