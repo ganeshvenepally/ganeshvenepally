@@ -77,6 +77,14 @@ markdown_extensions:
   - pymdownx.mark
 
 
+plugins:
+  - search
+  - pdf-export:
+      combined: true
+      verbose: true
+      media_type: print
+      path: pdf/site.pdf
+
 nav:
   - Home: 'index.md'
   - Network Automation:
@@ -120,4 +128,4 @@ extra:
 
 
 copyright: |
-  &copy; 2023 <a>Ganesh Venepally</a> 
+  &copy; 2024 <a>Ganesh Venepally</a> 
