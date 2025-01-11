@@ -91,6 +91,8 @@ nav:
   - Network Automation:
     - Intro: network-automation/index.md
     - NetDevOps: network-automation/01-netdevops/index.md
+    - Python:
+        - network-automation/03-python/nornir_pyeapi.ipynb    
     # - Data Models and Encodings: network-automation/02-data-models-encodings/index.md
     # - Python:
     #   - network-automation/03-python/index.md
