@@ -1,27 +1,30 @@
-name: ci
+name: Deploy MkDocs
+
 on:
   push:
     branches:
-      # - master 
-      - main
+      - main  # Triggers only on changes to the main branch
+
 permissions:
   contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # Checkout the repository
       - uses: actions/checkout@v3
+      
+      # Set up Python
       - uses: actions/setup-python@v4
         with:
           python-version: '3.x'
-      - uses: actions/cache@v2
-        with:
-          key: ${{ github.ref }}
-          path: .cache
-      - run: pip install mkdocs-material mkdocs-pdf-export-plugin
+      
+      # Install dependencies
+      - run: pip install mkdocs-material mkdocs-jupyter
+      
+      # Build the site
       - run: mkdocs build
+      
+      # Deploy to GitHub Pages
       - run: mkdocs gh-deploy --force
-      - uses: actions/upload-artifact@v3
-        with:
-          name: site-pdf
-          path: pdf/site.pdf
